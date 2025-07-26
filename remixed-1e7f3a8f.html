@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مع حسام تشبع جواهر فري فاير</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tahoma', 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .header {
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: #fff;
+            font-size: 2.2rem;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #FFD700, #FFA500, #FF4500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: bold;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255,255,255,0.3);
+            margin-bottom: 20px;
+        }
+
+        .gems-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            text-align: right;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .form-group input, 
+        .form-group select {
+            width: 100%;
+            padding: 18px;
+            border: 3px solid #e1e5e9;
+            border-radius: 15px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            background: rgba(255,255,255,0.9);
+            font-family: 'Tahoma', 'Arial', sans-serif;
+        }
+
+        .form-group input:focus, 
+        .form-group select:focus {
+            outline: none;
+            border-color: #4ecdc4;
+            box-shadow: 0 0 0 5px rgba(78, 205, 196, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .btn {
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            border: none;
+            border-radius: 15px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 25px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(255, 107, 107, 0.4);
+            background: linear-gradient(45deg, #ff5252, #26a69a);
+        }
+
+        .error-message {
+            color: #e74c3c;
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            display: none;
+            background: rgba(231, 76, 60, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px solid #e74c3c;
+        }
+
+        .success-message {
+            text-align: center;
+            color: #27ae60;
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin: 30px 0;
+        }
+
+        .failure-message {
+            text-align: center;
+            color: #e74c3c;
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin: 30px 0;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .tiktok-link {
+            color: #4ecdc4;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            background: rgba(78, 205, 196, 0.1);
+            padding: 10px 15px;
+            border-radius: 10px;
+            display: inline-block;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+        }
+
+        .tiktok-link:hover {
+            background: rgba(78, 205, 196, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .celebration {
+            font-size: 2rem;
+            margin: 20px 0;
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-15px); }
+            60% { transform: translateY(-7px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>مع حسام تشبع جواهر فري فاير</h1>
+        </div>
+
+        <!-- الصفحة الأولى -->
+        <div id="page1" class="card">
+            <div class="gems-icon">💎</div>
+            
+            <div class="form-group">
+                <label for="gameId">ID اللعبة:</label>
+                <input type="text" id="gameId" placeholder="أدخل ID الخاص بك">
+            </div>
+            
+            <div class="form-group">
+                <label for="gemsAmount">كمية الجواهر:</label>
+                <select id="gemsAmount">
+                    <option value="">اختر كمية الجواهر</option>
+                    <option value="100">100 جوهرة 💎</option>
+                    <option value="310">310 جوهرة 💎</option>
+                    <option value="520">520 جوهرة 💎</option>
+                    <option value="1080">1080 جوهرة 💎</option>
+                    <option value="2180">2180 جوهرة 💎</option>
+                    <option value="5600">5600 جوهرة 💎</option>
+                </select>
+            </div>
+            
+            <button class="btn" onclick="checkPage1()">تم ✅</button>
+            <div id="error1" class="error-message">❌ فشل - إعادة المحاولة</div>
+        </div>
+
+        <!-- الصفحة الثانية -->
+        <div id="page2" class="card hidden">
+            <div class="form-group">
+                <label for="age">كم عمرك؟</label>
+                <input type="number" id="age" placeholder="أدخل عمرك" min="1" max="99">
+            </div>
+            
+            <div class="form-group">
+                <label for="phoneType">ما نوع هاتفك؟</label>
+                <select id="phoneType">
+                    <option value="">اختر نوع الهاتف</option>
+                    <option value="iphone">📱 iPhone</option>
+                    <option value="samsung">📱 Samsung</option>
+                    <option value="huawei">📱 Huawei</option>
+                    <option value="xiaomi">📱 Xiaomi</option>
+                    <option value="oppo">📱 Oppo</option>
+                    <option value="other">📱 أخرى</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="ffLevel">كم مستوى حسابك على فري فاير؟</label>
+                <input type="number" id="ffLevel" placeholder="أدخل مستوى حسابك" min="1">
+            </div>
+            
+            <div class="form-group">
+                <label for="userName">ما اسمك؟</label>
+                <input type="text" id="userName" placeholder="أدخل اسمك">
+            </div>
+            
+            <div class="form-group">
+                <label>اشتراك في حسابي على التيك توك:</label>
+                <a href="https://vm.tiktok.com/ZMSvkRtvD/" target="_blank" class="tiktok-link">
+                    🎵 اضغط هنا للاشتراك في التيك توك
+                </a>
+                <select id="tiktokSub">
+                    <option value="">هل اشتركت في حسابي؟</option>
+                    <option value="yes">✅ نعم، اشتركت</option>
+                    <option value="no">❌ لا، لم أشترك بعد</option>
+                </select>
+            </div>
+            
+            <button class="btn" onclick="checkPage2()">تم ✅</button>
+            <div id="error2" class="error-message">❌ يجب إكمال جميع الحقول بشكل صحيح</div>
+        </div>
+
+        <!-- صفحة النجاح -->
+        <div id="successPage" class="card hidden">
+            <div class="celebration">🎉🎊🎉</div>
+            <div class="success-message">
+                مبروك عليك الجواهر ستصلك قريباً! 💎
+            </div>
+            <p style="color: #333; font-size: 1.1rem; margin: 20px 0;">
+                سيتم إرسال الجواهر إلى حسابك خلال 24 ساعة ⏰
+            </p>
+            <button class="btn" onclick="startOver()">طلب جديد 🔄</button>
+        </div>
+
+        <!-- صفحة الفشل -->
+        <div id="failurePage" class="card hidden">
+            <div class="failure-message">
+                ❌ حدث خطأ. أعد المحاولة مرة أخرى
+            </div>
+            <p style="color: #666; margin: 20px 0;">
+                تأكد من الاشتراك في حسابي على التيك توك أولاً
+            </p>
+            <button class="btn" onclick="backToStart()">إعادة المحاولة 🔄</button>
+        </div>
+    </div>
+
+    <script>
+        function checkPage1() {
+            var gameId = document.getElementById('gameId').value.trim();
+            var gemsAmount = document.getElementById('gemsAmount').value;
+            var errorDiv = document.getElementById('error1');
+            
+            if (gameId === '' || gemsAmount === '') {
+                errorDiv.style.display = 'block';
+                return;
+            }
+            
+            if (gameId.length < 6 || !/^\d+$/.test(gameId)) {
+                errorDiv.style.display = 'block';
+                return;
+            }
+            
+            errorDiv.style.display = 'none';
+            showPage2();
+        }
+        
+        function checkPage2() {
+            var age = document.getElementById('age').value;
+            var phoneType = document.getElementById('phoneType').value;
+            var ffLevel = document.getElementById('ffLevel').value;
+            var userName = document.getElementById('userName').value.trim();
+            var tiktokSub = document.getElementById('tiktokSub').value;
+            var errorDiv = document.getElementById('error2');
+            
+            if (age === '' || phoneType === '' || ffLevel === '' || userName === '' || tiktokSub === '') {
+                errorDiv.style.display = 'block';
+                return;
+            }
+            
+            if (age < 10 || age > 80 || ffLevel < 1) {
+                errorDiv.style.display = 'block';
+                return;
+            }
+            
+            errorDiv.style.display = 'none';
+            
+            if (tiktokSub === 'no') {
+                showFailurePage();
+            } else {
+                showSuccessPage();
+            }
+        }
+        
+        function showPage1() {
+            document.getElementById('page1').classList.remove('hidden');
+            document.getElementById('page2').classList.add('hidden');
+            document.getElementById('successPage').classList.add('hidden');
+            document.getElementById('failurePage').classList.add('hidden');
+        }
+        
+        function showPage2() {
+            document.getElementById('page1').classList.add('hidden');
+            document.getElementById('page2').classList.remove('hidden');
+            document.getElementById('successPage').classList.add('hidden');
+            document.getElementById('failurePage').classList.add('hidden');
+        }
+        
+        function showSuccessPage() {
+            document.getElementById('page1').classList.add('hidden');
+            document.getElementById('page2').classList.add('hidden');
+            document.getElementById('successPage').classList.remove('hidden');
+            document.getElementById('failurePage').classList.add('hidden');
+        }
+        
+        function showFailurePage() {
+            document.getElementById('page1').classList.add('hidden');
+            document.getElementById('page2').classList.add('hidden');
+            document.getElementById('successPage').classList.add('hidden');
+            document.getElementById('failurePage').classList.remove('hidden');
+        }
+        
+        function startOver() {
+            clearAllFields();
+            showPage1();
+        }
+        
+        function backToStart() {
+            clearAllFields();
+            showPage1();
+        }
+        
+        function clearAllFields() {
+            document.getElementById('gameId').value = '';
+            document.getElementById('gemsAmount').value = '';
+            document.getElementById('age').value = '';
+            document.getElementById('phoneType').value = '';
+            document.getElementById('ffLevel').value = '';
+            document.getElementById('userName').value = '';
+            document.getElementById('tiktokSub').value = '';
+            
+            document.getElementById('error1').style.display = 'none';
+            document.getElementById('error2').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
